@@ -13,24 +13,28 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import HomeIcon from '@mui/icons-material/Home';
-import StarIcon from '@mui/icons-material/Star';
-import ChecklistIcon from '@mui/icons-material/Checklist';
+// import StarIcon from '@mui/icons-material/Star';
+// import ChecklistIcon from '@mui/icons-material/Checklist';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SupportIcon from '@mui/icons-material/Support';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
+import ContactsIcon from '@mui/icons-material/Contacts';
+import BusinessIcon from '@mui/icons-material/Business';
 
 export const metadata = {
-  title: 'Next.js App Router + Material UI v5',
-  description: 'Next.js App Router + Material UI v5',
+  title: 'TS & React Test Project',
+  description: 'Got skills?',
 };
 
 const DRAWER_WIDTH = 240;
 
 const LINKS = [
   { text: 'Home', href: '/', icon: HomeIcon },
-  { text: 'Starred', href: '/starred', icon: StarIcon },
-  { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
+//   { text: 'Starred', href: '/starred', icon: StarIcon },
+//   { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
+  { text: 'People', href: '/people', icon: ContactsIcon },
+  { text: 'Organizations', href: '/organizations', icon: BusinessIcon },
 ];
 
 const PLACEHOLDER_LINKS = [
@@ -48,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Toolbar sx={{ backgroundColor: 'background.paper' }}>
               <DashboardIcon sx={{ color: '#444', mr: 2, transform: 'translateY(-2px)' }} />
               <Typography variant="h6" color="text.primary">
-                Next.js App Router
+                CRUD Lists
               </Typography>
             </Toolbar>
           </AppBar>
