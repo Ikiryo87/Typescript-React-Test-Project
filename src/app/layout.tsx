@@ -13,8 +13,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import HomeIcon from '@mui/icons-material/Home';
-// import StarIcon from '@mui/icons-material/Star';
-// import ChecklistIcon from '@mui/icons-material/Checklist';
+import ChecklistIcon from '@mui/icons-material/Checklist';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SupportIcon from '@mui/icons-material/Support';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -31,10 +30,9 @@ const DRAWER_WIDTH = 240;
 
 const LINKS = [
   { text: 'Home', href: '/', icon: HomeIcon },
-//   { text: 'Starred', href: '/starred', icon: StarIcon },
-//   { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
-  { text: 'People', href: '/people', icon: ContactsIcon },
-  { text: 'Organizations', href: '/organizations', icon: BusinessIcon },
+  { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
+  { text: 'People', href: '/People', icon: ContactsIcon },
+  { text: 'Companies', href: '/Companies', icon: BusinessIcon },
 ];
 
 const PLACEHOLDER_LINKS = [
