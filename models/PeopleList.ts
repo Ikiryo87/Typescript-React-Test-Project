@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 
 export interface People extends mongoose.Document {
-  firstName: string,
-  lastName: string,
+  name: {
+    first: string,
+    last: string
+  },
   address: {
     street: string,
     number: number,
@@ -14,13 +16,15 @@ export interface People extends mongoose.Document {
 
 /* Peopleschema correspond to a collection in the MongoDB database. */
 const PeopleSchema = new mongoose.Schema<People>({
-  firstName: {
-    type: String,
-    required: [true, "Please provide a firstname or initial(s)."]
-  },
-  lastName: {
-    type: String,
-    required: [true, "Please provide a lastname."]
+  name: {
+    first: {
+        type: String,
+        required: [true, "Please provide a firstname or initial(s)."]
+    },
+    last: {
+        type: String,
+        required: [true, "Please provide a lastname."]
+    }
   },
   address: {
     street: {
@@ -47,5 +51,5 @@ const PeopleSchema = new mongoose.Schema<People>({
   }
 });
 
-export default mongoose.model<People>("Person", PeopleSchema);
-// mongoose.models.People ||
+export default mongoose.models.People ||
+mongoose.model<People>("Person", PeopleSchema);

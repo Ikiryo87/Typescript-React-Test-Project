@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function GenericCard({ heading, text }: { heading: string; text: string }) {
+export default function MediaCard({ heading, text }: { heading: string; text: string }) {
   return (
     <Card>
       <Image
@@ -29,29 +29,9 @@ export default function GenericCard({ heading, text }: { heading: string; text: 
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Show more information</Button>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
   );
 }
-
-
-
-{/* <ButtonGroup size='large'>
-<Button variant='contained' sx={{
-  mb: 2,
-  mt: 2,
-  p: 2,
-  backgroundColor: '#ab1886'
-}}>Add</Button>
-<Button variant='contained' sx={{
-  mb: 2,
-  mt: 2,
-  backgroundColor: '#ab1886'
-}}>Delete</Button>
-<Button variant='contained' sx={{
-  mb: 2,
-  mt: 2,
-  backgroundColor: '#ab1886'
-}}>Update</Button>
-</ButtonGroup> */}
