@@ -4,20 +4,70 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import MediaCard from '../../components/MediaCard';
+import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default function PeopleList(){
-    return(
+    return (
         <Box sx={{ display: 'flex' }}>
             <div>
             <Typography variant={'h4'} component={'h4'} align='center' sx={{
-                    color: 'white',
-                    backgroundColor: '#0ba36c',
-                    padding: 1,
-                    m: 2
-                }}>
-                    People List
-                </Typography>
-            <Grid container rowSpacing={3} columnSpacing={3}>
+                color: 'white',
+                backgroundColor: '#0ba36c',
+                padding: 1,
+                marginTop: 2,
+                marginBottom: 2
+            }}>
+                People List
+            </Typography>
+            <Grid container rowSpacing={3} columnSpacing={3} disableEqualOverflow>
+                <Grid xs={6} alignItems={'center'}>
+                  <Paper elevation={2} sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    width: '100%',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                  }}>
+                    <Typography variant='h6' component={'div'} >People Browser</Typography>
+                    <TextField id='outlined-basic' label='Person name' placeholder='Please insert a name' sx={{
+                        width: '50%',
+                        mb: 2,
+                        mt: 2
+                    }}/>
+                    <Button variant='contained' sx={{
+                        mb: 2,
+                        backgroundColor: '#9cbff7'
+                    }}>Search</Button>
+                  </Paper>
+                </Grid>
+                <Grid xs={6}>
+                  <Paper elevation={2}  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    width: '100%',
+                    alignItems: 'center'
+                    }}>
+                    <Typography variant='h6' component={'div'}>People Collection</Typography>
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}>
+                      <Button variant='contained' sx={{
+                        backgroundColor: '#9cbff7',
+                        mb: 2,
+                        mt: 2
+                      }}>Show list of people</Button>                    
+                      <Button variant='contained' sx={{
+                        backgroundColor: '#9cbff7',
+                        mb: 2
+                      }}>Add a new person</Button>
+                    </Box>
+                  </Paper>
+                </Grid>
                 <Grid xs={6}>
                 <MediaCard
                     heading="CMYK"
@@ -30,36 +80,24 @@ export default function PeopleList(){
                     text="HSL (for hue, saturation, lightness) and HSV (for hue, saturation, value; also known as HSB, for hue, saturation, brightness) are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers."
                 />
                 </Grid>
-                <Grid xs={6}>
-                <MediaCard
-                    heading="RGB"
-                    text="An RGB color space is any additive color space based on the RGB color model. RGB color spaces are commonly found describing the input signal to display devices such as television screens and computer monitors."
-                />
-                </Grid>
-                <Grid xs={6}>
-                <MediaCard
-                    heading="CIELAB"
-                    text="The CIELAB color space, also referred to as L*a*b*, was intended as a perceptually uniform space, where a given numerical change corresponds to a similar perceived change in color."
-                />
-                </Grid>
             </Grid>
             </div>
             <Drawer
-            sx={{
-                width: 100,
-                flexShrink: 0,
-                '& .MuiDrawer-paper': {
-                width: 100,
-                boxSizing: 'border-box',
-                top: ['48px', '56px', '64px'],
-                height: 'auto',
-                bottom: 0,
-                },
-            }}
-            variant="permanent"
-            anchor="right"
-            >
-            </Drawer>
+        sx={{
+            width: 100,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+            width: 100,
+            boxSizing: 'border-box',
+            top: ['48px', '56px', '64px'],
+            height: 'auto',
+            bottom: 0,
+            },
+        }}
+        variant="permanent"
+        anchor="right"
+        >
+        </Drawer>
         </Box>
-    );
+    );   
 };
