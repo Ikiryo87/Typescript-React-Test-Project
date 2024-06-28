@@ -13,5 +13,5 @@ const TasksSchema = new mongoose.Schema<Tasks>({
   },
 });
 
-export default mongoose.models.Task ||
+export default mongoose.models.Tasks ||
   mongoose.model<Tasks>("Task", TasksSchema);
