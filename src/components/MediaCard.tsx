@@ -7,11 +7,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default function MediaCard({ heading, text }: { heading: string; text: string }) {
+
   return (
     <Card>
       <Image
         alt="Random image"
-        src="https://source.unsplash.com/random"
+        src= "https://source.unsplash.com/random"
         width={640}
         height={480}
         style={{
@@ -35,3 +36,6 @@ export default function MediaCard({ heading, text }: { heading: string; text: st
     </Card>
   );
 }
+
+
+// Unsplash no longer provides any support for source.unsplash.com. We only left up this option for legacy developers who had been using source.unsplash.com before the Unsplash API was created.

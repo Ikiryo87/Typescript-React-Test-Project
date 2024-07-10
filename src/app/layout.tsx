@@ -33,7 +33,8 @@ const LINKS = [
   { text: 'Tasks', href: '/tasks', icon: ChecklistIcon },
   { text: 'People', href: '/People', icon: ContactsIcon },
   { text: 'Companies', href: '/Companies', icon: BusinessIcon },
-  { text: 'PersonForm', href: '/PersonForm', icon: ContactsIcon}
+  { text: 'PersonForm', href: '/PersonForm', icon: ContactsIcon},
+  { text: 'CompanyForm', href:'/CompanyForm', icon: ContactsIcon}
 ];
 
 const PLACEHOLDER_LINKS = [

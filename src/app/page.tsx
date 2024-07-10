@@ -23,7 +23,7 @@ export default function HomePage() {
           p: 2,
           mb: 3
         }}>
-          Welcome to my website. This is a practice project I got assigned @ <Link href="https://visie-groep.nl/">Visie-Groep</Link>. The website will feature two CRUD applications; a company list and a people list. If you want to view a list of companies please select 'Companies' in the menu to the left. If you want to view a list of people, please select 'People' in the menu to the left.
+          Welcome to my website. This is a practice project I got assigned @ <Link href="https://visie-groep.nl/" target='_blank'>Visie-Groep</Link>. The website will feature two CRUD applications; a company list and a people list. If you want to view a list of companies please select 'Companies' in the menu to the left. If you want to view a list of people, please select 'People' in the menu to the left.
           <br/>
           <br/>
           The companies page will show you a list of companies that are listed in a MongoDB collection. You can simply look at an overview of the collected companies, search for specific company, add or delete one.

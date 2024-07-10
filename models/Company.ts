@@ -1,18 +1,20 @@
 import mongoose from "mongoose";
+const { Schema, model } = mongoose;
 
-export interface Companies extends mongoose.Document {
-  name: string,
-  address: {
-    street: string,
-    number: number,
-    city: string,
-    pc: string,
-    state: string
-  };
-};
+// export interface Company extends mongoose.Document {
+//   name: string,
+//   address: {
+//     street: string,
+//     number: number,
+//     city: string,
+//     pc: string,
+//     state: string
+//   };
+// };
 
-/* Taskschema will correspond to a collection in your MongoDB database. */
-const CompaniesSchema = new mongoose.Schema<Companies>({
+/* Companyschema will correspond to a collection in the MongoDB database. */
+
+const CompanySchema = new Schema({
   name: {
     type: String,
     required: [true, "Please provide a company name."],
@@ -43,5 +45,5 @@ const CompaniesSchema = new mongoose.Schema<Companies>({
   }
 });
 
-export default mongoose.models.Companies ||
-  mongoose.model<Companies>("Company", CompaniesSchema);
+const Company = model("Company", CompanySchema);
+module.exports = mongoose.models.Company || Company;

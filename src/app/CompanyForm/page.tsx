@@ -5,54 +5,36 @@ import { Drawer, Box, Typography, TextField, Button, InputAdornment } from '@mui
 import Grid from '@mui/material/Unstable_Grid2';
 import AddressForm from '@/components/AddressForm';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import PersonModel, { IPerson } from '../../../models/Person';
+import CompanyModel, { ICompany } from '../../../models/Person';
 import { Types } from "mongoose";
 
 // Create a new document... //
-const doc = new PersonModel({
-  firstName: '',
-  lastName: '',
-  address: {
-    street: '',
-    number: 0,
-    postalcode: '',
-    city: '',
-    state: ''
-  },
-  company: new Types.ObjectId()
-});
+// const doc = new CompanyModel({
+
+// });
 
 // Initial state for use with useState
-const initialPersonState: IPerson = {
-  firstName: '',
-  lastName: '',
-  address: {
-    street: '',
-    number: 0,
-    postalcode: '',
-    city: '',
-    state: ''
-  },
-  company: ''
-};
+// const initialCompanyState: ICompany = {
+
+// };
 
 // Defining raw document type
-type RawPersonDocument = IPerson & Document;
+type RawCompanyDocument = ICompany & Document;
 
 // Where does this line go exactly? I think this is used when we want to work with existing data?
 // useRawDoc(doc.toObject() as RawPersonDocument);
 
 
 // This function will work with raw document data!
-export default function CreatePerson(doc: RawPersonDocument){
-  const [person, setPerson] = useState<IPerson>(initialPersonState);
+export default function CreateCompany(doc: RawCompanyDocument){
+  const [company, setCompany] = useState<ICompany>(initialCompanyState);
 
   // const person = new PersonModel()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setPerson({
-      ...person,
+    setCompany({
+      ...company,
       [name]: value
     });
   };
@@ -60,10 +42,10 @@ export default function CreatePerson(doc: RawPersonDocument){
   // This is because address data is nested in the doc
   const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setPerson({
-      ...person,
+    setCompany({
+      ...company,
       address: {
-        ...person.address,
+        ...company.address,
         [name]: value
       }
     });
@@ -72,37 +54,6 @@ export default function CreatePerson(doc: RawPersonDocument){
   const handleSubmit = () =>{
 
   };
-  
-/*
-  const handleSubmit = async () => {
-    // Assuming you have a function to save the person to your backend
-    try {
-      const newPerson = new PersonModel(person);
-      await newPerson.save(); // Or send to your backend API
-      console.log('Person saved successfully');
-    } catch (error) {
-      console.error('Error saving person:', error);
-    }
-  };
-
-
-  const handleSubmit = () => {
-    fetch("/api/people", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-  */
 
     return (
         <Box component={'form'} sx={{ 
@@ -135,7 +86,7 @@ export default function CreatePerson(doc: RawPersonDocument){
                         <AccountCircle />
                         </InputAdornment>
                     ),
-                    }} name='firstName' value={person.firstName} onChange={handleChange}>
+                    }} name='firstName' value={} onChange={handleChange}>
                   </TextField>  
                 </Grid>
                 <Grid xs={3} >
@@ -145,7 +96,7 @@ export default function CreatePerson(doc: RawPersonDocument){
                         <AccountCircle />
                         </InputAdornment>
                     ),
-                    }} name='lastName' value={person.lastName} onChange={handleChange}>
+                    }} name='lastName' value={} onChange={handleChange}>
                     </TextField>
                 </Grid>
             </Grid>
